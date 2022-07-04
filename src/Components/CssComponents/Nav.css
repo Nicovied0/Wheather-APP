@@ -1,0 +1,31 @@
+.Nav-container{
+  display: flex;
+  margin: 2rem 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.input {
+    background-color: #23224a;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin: 0 1rem;
+    color: #FFF;
+  }
+
+
+  
+.weatherSearch {
+    margin: 0 15px;
+    border: none;
+    color: #7c7c94;
+  }
+  
+  .weatherIcon {
+    color: #cfcfcf;
+  }
+
+  .Div-Search{
+    margin: 5px;
+  }

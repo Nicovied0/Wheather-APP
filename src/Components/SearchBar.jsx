@@ -1,8 +1,15 @@
 import React from 'react'
+import './CssComponents/Nav.css'
 
-const SearchBar = () => {
+import { FaMapMarkerAlt } from 'react-icons/fa';
+
+const SearchBar = (props) => {
   return (
-    <div>Search-Bar</div>
+    <div className='Div-Search'>
+      <input className='input' type='text' placeholder='Buscar'></input>
+      <button class="weatherIcon input" onClick={() => {props.onSearch('Ciudad Encontrada')}}><FaMapMarkerAlt/> </button>
+      
+    </div>
   )
 }
 
