@@ -14,7 +14,7 @@ const SearchBar = ({onSearch}) => {
     }}>
       <input className='input' 
       type='text' 
-      placeholder='Ciudad' 
+      placeholder='Ciudad...' 
       value={city} 
       onChange={e => setCity(e.target.value)}/>
       <input class="weatherIcon input" type="submit" value='Buscar' ></input> 

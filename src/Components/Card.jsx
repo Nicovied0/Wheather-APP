@@ -11,8 +11,8 @@ const Card = ({min,max,img,name,onClose}) => {
       <h1 className='name'>{name}</h1>
         <img className='class-img'alt='img' src={`http://openweathermap.org/img/wn/${img}@2x.png`}/>
         <div className='Div-temp'>
-          <p>Min {min}</p>
-          <p>Max {max}</p>
+          <p>Min {min} °</p>
+          <p>Max {max} °</p>
         </div>
     </div>
   )
