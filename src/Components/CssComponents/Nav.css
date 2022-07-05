@@ -11,7 +11,7 @@
     border-radius: 8px;
     padding: 0.8rem;
     margin: 0 1rem;
-    color: #FFF;
+    color: rgba(255, 255, 255, 0.357);
   }
 
 
@@ -28,4 +28,9 @@
 
   .Div-Search{
     margin: 5px;
+  }
+
+  .input:hover{
+    background-color: #69696fb8;
+    transform: scale(1.2);
   }

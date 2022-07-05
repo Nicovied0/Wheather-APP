@@ -2,20 +2,20 @@ import React from 'react'
 import Card from './Card'
 import './CssComponents/Cards.css'
 
-const Cards = ({cities, onClose}) => {
+export default function Cards ({cities, onClose}){
   if(cities){
     return (
       <div className='Div-Cards-Container'> 
           {
               cities.map(n=>
                   <Card
-                    name={n.name}
-                    min={n.main.temp_min}
-                    max={n.main.temp_max}
-                    img={n.weather[0].icon}
-                    onClose ={() => onClose(n.id) }
-                    key={n.id}
-                    id={n.id}
+                  max={n.max}
+                  min={n.min}
+                  name={n.name}
+                  img={n.img}
+                  onClose={() => onClose(n.id)}
+                  id={n.id}
+                  key={n.id}
                   />)
           }
       </div>
@@ -28,4 +28,3 @@ const Cards = ({cities, onClose}) => {
   }
 }
 
-export default Cards

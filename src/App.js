@@ -1,20 +1,49 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
-import Cards from './Components/Cards';
+import Cards from './Components/Cards.jsx';
 import Nav from './Components/Nav';
-import data from './data.js';
 
-
-// function onClose(id){
-//   setCities(oldCities=> oldCities.filter(c=> c.id !== id))
-// }
 
 
 function App() {
+  const [cities, setCities] = useState([])
+  const apiKey = '4ae2636d8dfbdc3044bede63951a019b'
+
+  function onSearch(city) {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+      .then(response => response.json())
+      .then(response_json => {
+        if (response_json.main !== undefined) {
+          const city = {
+            min: Math.round(response_json.main.temp_min),
+            max: Math.round(response_json.main.temp_max),
+            img: response_json.weather[0].icon,
+            id: response_json.id,
+            wind: response_json.wind.speed,
+            temp: response_json.main.temp,
+            name: response_json.name,
+            weather: response_json.weather[0].main,
+            clouds: response_json.clouds.all,
+            latitud: response_json.coord.lat,
+            longitud: response_json.coord.lon
+          };
+          setCities(oldCities => [...oldCities, city])
+        } else {
+          alert('Ciudad No encontrada')
+        }
+      })
+  }
+  
+  function onClose(id){
+    setCities(oldCities=> oldCities.filter(c=> c.id !== id))
+  }
+
+
+
   return (
     <div className="App">
-      <Nav  onSearch={(cities) => alert(cities)}/>
-      <Cards cities={data} />
+      <Nav  onSearch={onSearch}/>
+      <Cards cities={cities} onClose={onClose}/>
     </div>
   );
 }

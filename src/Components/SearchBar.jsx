@@ -1,15 +1,24 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './CssComponents/Nav.css'
 
-import { FaMapMarkerAlt } from 'react-icons/fa';
 
-const SearchBar = (props) => {
+const SearchBar = ({onSearch}) => {
+
+  const [city,setCity] = useState('')
+
   return (
-    <div className='Div-Search'>
-      <input className='input' type='text' placeholder='Buscar'></input>
-      <button class="weatherIcon input" onClick={() => {props.onSearch('Ciudad Encontrada')}}><FaMapMarkerAlt/> </button>
-      
-    </div>
+    <form className='Div-Search' onSubmit={(e) => { 
+      e.preventDefault();
+      onSearch(city);
+      setCity('')
+    }}>
+      <input className='input' 
+      type='text' 
+      placeholder='Ciudad' 
+      value={city} 
+      onChange={e => setCity(e.target.value)}/>
+      <input class="weatherIcon input" type="submit" value='Buscar' ></input> 
+    </form>
   )
 }
 
