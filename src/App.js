@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Cards from './Components/Cards.jsx';
 import Nav from './Components/Nav';
@@ -27,23 +27,30 @@ function App() {
             latitud: response_json.coord.lat,
             longitud: response_json.coord.lon
           };
-          setCities(oldCities => [...oldCities, city])
+          // Buscar un id repetido
+          const encontrada = cities.find(c => c.id === city.id);
+          if (encontrada) {
+            alert('Esta ciudad ya fue buscada')
+          } else {
+            setCities(oldCities => [...oldCities, city])
+          }
+
         } else {
           alert('Ciudad No encontrada')
         }
       })
   }
-  
-  function onClose(id){
-    setCities(oldCities=> oldCities.filter(c=> c.id !== id))
+
+  function onClose(id) {
+    setCities(oldCities => oldCities.filter(c => c.id !== id))
   }
 
 
 
   return (
     <div className="App">
-      <Nav  onSearch={onSearch}/>
-      <Cards cities={cities} onClose={onClose}/>
+      <Nav onSearch={onSearch} />
+      <Cards cities={cities} onClose={onClose} />
     </div>
   );
 }
