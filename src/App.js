@@ -36,7 +36,7 @@ function App() {
           }
 
         } else {
-          alert('Ciudad No encontrada')
+          alert(`La ciudad " ${city} ". No fue encontrada`)
         }
       })
   }
