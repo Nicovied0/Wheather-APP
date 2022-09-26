@@ -23,7 +23,7 @@ export default function Cards ({cities, onClose}){
     
   }else{
     return(
-      <div>Que ciudad Desea encontrar?</div>
+      <h2>Que ciudad Desea encontrar?</h2>
     )
   }
 }

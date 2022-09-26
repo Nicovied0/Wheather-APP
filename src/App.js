@@ -7,7 +7,6 @@ import Nav from './Components/Nav';
 
 function App() {
   const [cities, setCities] = useState([])
-  // const apiKey = '4ae2636d8dfbdc3044bede63951a019b'
 
   function onSearch(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4ae2636d8dfbdc3044bede63951a019b&units=metric`)
