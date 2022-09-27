@@ -6,7 +6,7 @@ import Loader from "./Loader";
 export default function Cards({ cities, onClose }) {
   // console.log(cities.length, "ciudad de card");
   if (cities.length === 0) {
-    return <div>Que ciudad Desea encontrar?</div>;
+    return <div>What city do you want to find?</div>;
   } else {
     return (
       <div className="Div-Cards-Container">
