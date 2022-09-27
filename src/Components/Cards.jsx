@@ -1,30 +1,26 @@
-import React from 'react'
-import Card from './Card'
-import './CssComponents/Cards.css'
+import React from "react";
+import Card from "./Card";
+import "./CssComponents/Cards.css";
 
-export default function Cards ({cities, onClose}){
-  if(cities){
+export default function Cards({ cities, onClose }) {
+  // console.log(cities.length, "ciudad de card");
+  if (cities.length === 0) {
+    return <div>Que ciudad Desea encontrar?</div>;
+  } else {
     return (
-      <div className='Div-Cards-Container'> 
-          {
-              cities.map(n=>
-                  <Card
-                  max={n.max}
-                  min={n.min}
-                  name={n.name}
-                  img={n.img}
-                  onClose={() => onClose(n.id)}
-                  id={n.id}
-                  key={n.id}
-                  />)
-          }
+      <div className="Div-Cards-Container">
+        {cities.map((n) => (
+          <Card
+            max={n.max}
+            min={n.min}
+            name={n.name}
+            img={n.img}
+            onClose={() => onClose(n.id)}
+            id={n.id}
+            key={n.id}
+          />
+        ))}
       </div>
     );
-    
-  }else{
-    return(
-      <h2>Que ciudad Desea encontrar?</h2>
-    )
   }
 }
-

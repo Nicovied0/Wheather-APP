@@ -45,13 +45,23 @@ function App() {
   }
 
 
-
+// if(cities !== []){
+// return(
+//   <div className="App">
+//       <Nav onSearch={onSearch} />
+//       <Cards cities={cities} onClose={onClose} />
+//       <h2>Ingrese una ciuda</h2>
+//     </div>
+// )
+// }else{
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
       <Cards cities={cities} onClose={onClose} />
     </div>
   );
+
+  
 }
 
 export default App;
