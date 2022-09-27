@@ -6,7 +6,6 @@ const Nav = ({onSearch}) => {
   return (
     <div className='Nav-container'>
       <SearchBar onSearch={onSearch} />
-        
     </div>
   )
 }
