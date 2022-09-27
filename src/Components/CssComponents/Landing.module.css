@@ -1,19 +1,21 @@
-.container{
-  max-height: 100vh;
+.container {
+  background-image: url('../../water.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
 }
 
-.video{
-  width: 100%;
-  height: auto;
-  z-index: -10;
+.btn {
+ height: 4rem;
 }
-.btn{
-  position: absolute;
-  top:50%;
-  left: 50%;
-}
-.btnHome{
-  background-color: #8E2DE2; /* Green */
+.btnHome {
+  background-color: #8e2de2; /* Green */
   border: none;
   color: white;
   padding: 16px 32px;
@@ -27,12 +29,12 @@
 }
 
 .btnHome {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #8E2DE2;
+  background-color: white;
+  color: black;
+  border: 2px solid #8e2de2;
 }
 
 .btnHome:hover {
-  background-color: #8E2DE2;
+  background-color: #8e2de2;
   color: white;
 }
